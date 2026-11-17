@@ -1,0 +1,5 @@
+# Credenciales (Client Secret de Spotify y base de datos)
+includes/config.php
+
+# Configuración local de Claude
+.claude/
