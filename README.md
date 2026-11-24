@@ -81,6 +81,26 @@ Es una sugerencia: el usuario puede cambiarla antes de guardar.
 
 ## Instalación
 
+### Con Docker
+
+Requiere Docker Desktop con Docker Compose. Desde la raíz del proyecto, en PowerShell:
+
+1. Copia `.env.example` como `.env` y cambia `MYSQL_PASSWORD` y
+   `MYSQL_ROOT_PASSWORD`:
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+   Agrega las credenciales de Spotify si quieres habilitar la búsqueda.
+2. Ejecuta `docker compose up --build`.
+3. Abre http://localhost:8080 y crea una cuenta.
+
+La primera vez, Docker crea `musictrack_db` e importa `database/musictrack_db.sql`.
+Los datos quedan en el volumen `mysql_data` y persisten al detener los contenedores
+con `docker compose down`. No uses `docker compose down -v` salvo que quieras borrar
+la base de datos.
+
+### Instalación manual
+
 1. Crear la base `musictrack_db` (utf8mb4_spanish_ci) e importar `database/musictrack_db.sql`.
    Si ya tenías la base anterior, ejecuta en orden `migracion_spotify.sql` y `migracion_v2.sql`.
 2. Copiar `includes/config.example.php` como `includes/config.php` y poner:

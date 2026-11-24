@@ -166,9 +166,11 @@
                                     </span>
                                 </div>
 
-                                <?php if (!empty($item['notas'])): ?>
-                                    <p class="card-notes" title="<?= e($item['notas']) ?>">“<?= e($item['notas']) ?>”</p>
-                                <?php endif; ?>
+                                <div class="card-notes-slot">
+                                    <?php if (!empty($item['notas'])): ?>
+                                        <p class="card-notes" title="<?= e($item['notas']) ?>">“<?= e($item['notas']) ?>”</p>
+                                    <?php endif; ?>
+                                </div>
 
                                 <!-- Playlists de esta canción -->
                                 <div class="card-playlists">
@@ -199,25 +201,27 @@
                                     <?php endif; ?>
                                 </div>
 
-                                <?php if (!empty($item['spotify_id'])): ?>
-                                    <!-- Reproductor embebido de Spotify: solo necesita el ID (canción o álbum) -->
-                                    <iframe class="spotify-player"
-                                        src="https://open.spotify.com/embed/<?= $item['spotify_tipo'] === 'album' ? 'album' : 'track' ?>/<?= e($item['spotify_id']) ?>?theme=0"
-                                        width="100%" height="80" frameborder="0"
-                                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                                        loading="lazy"
-                                        title="Reproducir <?= e($item['titulo']) ?> en Spotify"></iframe>
-                                <?php endif; ?>
+                                <div class="card-footer">
+                                    <?php if (!empty($item['spotify_id'])): ?>
+                                        <!-- Reproductor embebido de Spotify: solo necesita el ID (canción o álbum) -->
+                                        <iframe class="spotify-player"
+                                            src="https://open.spotify.com/embed/<?= $item['spotify_tipo'] === 'album' ? 'album' : 'track' ?>/<?= e($item['spotify_id']) ?>?theme=0"
+                                            width="100%" height="80" frameborder="0"
+                                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                            loading="lazy"
+                                            title="Reproducir <?= e($item['titulo']) ?> en Spotify"></iframe>
+                                    <?php endif; ?>
 
-                                <div class="card-actions">
-                                    <small class="card-date">Agregado el <?= date('d/m/Y', strtotime($item['fecha_registro'])) ?></small>
-                                    <div class="card-buttons">
-                                        <button type="button" class="card-action" data-editar="<?= e($datosEditar) ?>">✎ Editar</button>
-                                        <form action="acciones/eliminar.php" method="POST" onsubmit="return confirm('¿Deseas eliminar este elemento?');">
-                                            <?= $camposPost ?>
-                                            <input type="hidden" name="id" value="<?= $id ?>">
-                                            <button type="submit" class="delete-action" aria-label="Eliminar <?= e($item['titulo']) ?>">✕</button>
-                                        </form>
+                                    <div class="card-actions">
+                                        <small class="card-date">Agregado el <?= date('d/m/Y', strtotime($item['fecha_registro'])) ?></small>
+                                        <div class="card-buttons">
+                                            <button type="button" class="card-action" data-editar="<?= e($datosEditar) ?>">✎ Editar</button>
+                                            <form action="acciones/eliminar.php" method="POST" onsubmit="return confirm('¿Deseas eliminar este elemento?');">
+                                                <?= $camposPost ?>
+                                                <input type="hidden" name="id" value="<?= $id ?>">
+                                                <button type="submit" class="delete-action" aria-label="Eliminar <?= e($item['titulo']) ?>">✕</button>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
 

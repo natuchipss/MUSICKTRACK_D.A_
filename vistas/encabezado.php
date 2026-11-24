@@ -9,7 +9,7 @@
     <!-- Token CSRF para las peticiones de JavaScript (guardado rápido) -->
     <meta name="csrf-token" content="<?= e(csrf_token()) ?>">
     <title>MusicTrack | Sistema de Gestión Musical</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=<?= filemtime(__DIR__ . '/../assets/css/styles.css') ?>">
 </head>
 
 <body>
