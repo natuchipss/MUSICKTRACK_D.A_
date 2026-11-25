@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * Vista inicio: la incluye index.php, que define estas variables.
+ *
+ * @var array<string, int> $conteos
+ */
+
+?>
         <!-- ========================= INICIO ========================= -->
         <section id="inicio" class="hero">
 

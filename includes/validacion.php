@@ -3,8 +3,6 @@
 // Validación de los datos de una canción. La usan el formulario "Agregar" (acciones/registrar.php)
 // y el modal "Editar" (acciones/actualizar.php), así las dos reglas no se pueden desincronizar.
 
-require_once __DIR__ . '/funciones.php';
-
 /**
  * Lee los campos comunes de una canción enviados por POST y los valida contra los catálogos.
  *
@@ -30,7 +28,8 @@ function validar_cancion(array $post): ?array
     ];
 
     $completo = $titulo !== '' && $artista !== ''
-        && isset(TIPOS[$datos['tipo']], GENEROS[$datos['genero']], PRIORIDADES[$datos['prioridad']], ESTADOS[$datos['estado']]);
+        && isset(TIPOS[$datos['tipo']], GENEROS[$datos['genero']])
+        && isset(PRIORIDADES[$datos['prioridad']], ESTADOS[$datos['estado']]);
 
     return $completo ? $datos : null;
 }

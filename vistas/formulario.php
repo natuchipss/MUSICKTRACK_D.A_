@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * Vista formulario: la incluye index.php, que define estas variables.
+ *
+ * @var string $camposPost
+ */
+
+?>
         <!-- ========================= REGISTRAR MÚSICA ========================= -->
         <section id="registrar" class="section register">
 

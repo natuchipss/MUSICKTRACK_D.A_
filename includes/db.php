@@ -1,6 +1,8 @@
 <?php
+
 // Conexión PDO única (se crea la primera vez que se llama a db())
-function db(): PDO {
+function db(): PDO
+{
     static $pdo = null;
 
     if ($pdo === null) {

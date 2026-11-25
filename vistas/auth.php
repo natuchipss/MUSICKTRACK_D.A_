@@ -1,6 +1,14 @@
 <?php
-// Diseño compartido de login.php y registro.php.
-// Variables: $tituloPagina, $modo ('login' | 'registro'), $error (texto o null), $aviso (texto o null)
+
+/**
+ * Vista auth (diseño compartido de login y registro): la incluyen login.php y registro.php, que definen estas variables.
+ *
+ * @var string $tituloPagina
+ * @var string $modo 'login' o 'registro'
+ * @var string|null $error
+ * @var string|null $aviso
+ */
+
 ?>
 <!DOCTYPE html>
 <html lang="es">

@@ -122,6 +122,22 @@ final class AccionesTest extends TestCase
         $this->assertNull($this->fila($id)['calificacion']);
     }
 
+    #[TestDox('CP-16 La página principal muestra la biblioteca, el progreso y escapa el HTML (agregada con R6)')]
+    public function testPaginaPrincipal(): void
+    {
+        $this->ana->post('acciones/registrar.php', ['titulo' => '<b>Hola</b>'] + $this->cancionValida());
+
+        $pagina = $this->ana->get('index.php');
+        $this->assertSame(200, $pagina['status']);
+        $this->assertStringStartsWith('<!DOCTYPE html>', $pagina['cuerpo'], 'las vistas no imprimen nada antes del HTML');
+        $this->assertStringContainsString('Tu biblioteca', $pagina['cuerpo']);
+        $this->assertStringContainsString('Has escuchado <b>0</b> de <b>1</b>', $pagina['cuerpo']);
+        $this->assertStringContainsString('&lt;b&gt;Hola&lt;/b&gt;', $pagina['cuerpo']);
+        $this->assertStringNotContainsString('<b>Hola</b>', $pagina['cuerpo']);
+
+        $this->assertStringStartsWith('<!DOCTYPE html>', (new ClienteHttp())->get('login.php')['cuerpo']);
+    }
+
     #[TestDox('CP-12 Seguridad: sin token CSRF responde 403 y la API sin sesión responde 401')]
     public function testSeguridad(): void
     {

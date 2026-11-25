@@ -1,4 +1,5 @@
 <?php
+
 // Consultas de la página principal. Todas filtran por usuario_id: cada quien ve solo lo suyo.
 
 /**
@@ -116,8 +117,13 @@ function consultar_biblioteca(PDO $pdo, int $uid, array $filtros): array
     return ['items' => $stmt->fetchAll(), 'total' => $total, 'paginas' => $pag['paginas'], 'pagina' => $pag['pagina']];
 }
 
-// Playlists del usuario con su cantidad de canciones
-function consultar_playlists(PDO $pdo, int $uid): array {
+/**
+ * Playlists del usuario con su cantidad de canciones.
+ *
+ * @return list<array<string, mixed>> Filas con id, nombre y total
+ */
+function consultar_playlists(PDO $pdo, int $uid): array
+{
     $stmt = $pdo->prepare('SELECT p.id, p.nombre, COUNT(pc.cancion_id) AS total
                            FROM playlists p
                            LEFT JOIN playlist_canciones pc ON pc.playlist_id = p.id
@@ -128,8 +134,14 @@ function consultar_playlists(PDO $pdo, int $uid): array {
     return $stmt->fetchAll();
 }
 
-// Para cada canción mostrada, sus playlists: [cancion_id => [playlist_id => nombre]]
-function playlists_por_cancion(PDO $pdo, int $uid, array $idsCanciones): array {
+/**
+ * Para cada canción mostrada, sus playlists: [cancion_id => [playlist_id => nombre]].
+ *
+ * @param list<int|string> $idsCanciones
+ * @return array<int, array<int, string>>
+ */
+function playlists_por_cancion(PDO $pdo, int $uid, array $idsCanciones): array
+{
     if (!$idsCanciones) {
         return [];
     }
@@ -148,8 +160,15 @@ function playlists_por_cancion(PDO $pdo, int $uid, array $idsCanciones): array {
     return $mapa;
 }
 
-// Números para "Mi progreso" y las estadísticas
-function estadisticas(PDO $pdo, int $uid): array {
+/**
+ * Números para "Mi progreso" y las estadísticas.
+ *
+ * @return array{conteos: array<string, int>, total: int, porcentaje: int,
+ *               porGenero: list<array<string, mixed>>, topArtistas: list<array<string, mixed>>,
+ *               promedio: ?float, calificadas: int}
+ */
+function estadisticas(PDO $pdo, int $uid): array
+{
     $conteos = array_fill_keys(array_keys(ESTADOS), 0);
     $stmt = $pdo->prepare('SELECT estado, COUNT(*) AS total FROM canciones WHERE usuario_id = :uid GROUP BY estado');
     $stmt->execute([':uid' => $uid]);

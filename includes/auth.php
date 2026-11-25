@@ -1,4 +1,5 @@
 <?php
+
 // Sesión, usuario actual y protección CSRF.
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/funciones.php';
@@ -11,27 +12,34 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // ===== Usuario =====
 
-function usuario_actual(): ?array {
+/** @return array{id: int, nombre: string}|null */
+function usuario_actual(): ?array
+{
     return $_SESSION['usuario'] ?? null;
 }
 
-function usuario_id(): int {
+function usuario_id(): int
+{
     return (int) ($_SESSION['usuario']['id'] ?? 0);
 }
 
-function iniciar_sesion(array $usuario): void {
+/** @param array<string, mixed> $usuario Fila de la tabla usuarios (necesita id y nombre) */
+function iniciar_sesion(array $usuario): void
+{
     session_regenerate_id(true); // evita fijación de sesión
     $_SESSION['usuario'] = ['id' => (int) $usuario['id'], 'nombre' => $usuario['nombre']];
 }
 
-function cerrar_sesion(): void {
+function cerrar_sesion(): void
+{
     $_SESSION = [];
     session_regenerate_id(true);
 }
 
 // Páginas (index.php): sin sesión, se va al login.
 // También comprueba que el usuario siga existiendo (por si se borró o la sesión es de otra base).
-function requerir_login(): void {
+function requerir_login(): void
+{
     if (usuario_actual()) {
         $stmt = db()->prepare('SELECT nombre FROM usuarios WHERE id = :id');
         $stmt->execute([':id' => usuario_id()]);
@@ -49,21 +57,25 @@ function requerir_login(): void {
 
 // ===== CSRF: cada formulario POST lleva un token que solo conoce la sesión =====
 
-function csrf_token(): string {
+function csrf_token(): string
+{
     return $_SESSION['csrf'] ??= bin2hex(random_bytes(32));
 }
 
-function csrf_campo(): string {
+function csrf_campo(): string
+{
     return '<input type="hidden" name="csrf" value="' . csrf_token() . '">';
 }
 
-function csrf_valido(?string $token): bool {
+function csrf_valido(?string $token): bool
+{
     return is_string($token) && hash_equals(csrf_token(), $token);
 }
 
 // ===== Protección de los archivos de /acciones (formularios) =====
 // Exige POST, token CSRF y (salvo login/registro) un usuario con sesión.
-function accion_protegida(bool $requiereUsuario = true): void {
+function accion_protegida(bool $requiereUsuario = true): void
+{
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
         header('Location: ../index.php');
         exit;
@@ -80,7 +92,8 @@ function accion_protegida(bool $requiereUsuario = true): void {
 
 // ===== Protección de los archivos de /api (JSON) =====
 // El token CSRF llega en la cabecera X-CSRF-Token en las peticiones POST.
-function api_protegida(): void {
+function api_protegida(): void
+{
     header('Content-Type: application/json; charset=utf-8');
 
     if (!usuario_actual()) {

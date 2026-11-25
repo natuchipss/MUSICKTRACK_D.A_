@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * Vista modal_editar: la incluye index.php, que define estas variables.
+ *
+ * @var string $camposPost
+ */
+
+?>
     <!-- ========================= MODAL EDITAR ========================= -->
     <!-- JavaScript llena los campos con los datos de la tarjeta (atributo data-editar) -->
     <dialog id="modalEditar" class="modal" aria-labelledby="modalEditarTitulo">

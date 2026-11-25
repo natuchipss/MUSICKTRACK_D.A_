@@ -1,4 +1,5 @@
 <?php
+
 // Agregar o quitar una canción de una playlist
 require_once __DIR__ . '/../includes/auth.php';
 accion_protegida();

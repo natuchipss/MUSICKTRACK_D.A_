@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * Vista encabezado: la incluye index.php, que define estas variables.
+ *
+ * @var array{0: string, 1: string}|null $aviso
+ * @var array{id: int, nombre: string} $usuario
+ */
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 

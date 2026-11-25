@@ -1,4 +1,5 @@
 <?php
+
 // Plantilla de configuración. Cópiala como config.php y pon tus datos reales.
 // config.php está en .gitignore para que el Client Secret nunca se publique.
 return [

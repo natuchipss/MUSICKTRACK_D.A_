@@ -1,3 +1,18 @@
+<?php
+
+/**
+ * Vista biblioteca: la incluye index.php, que define estas variables.
+ *
+ * @var int $total
+ * @var string $camposPost
+ * @var array{q: string, estado: string, orden: string, playlist: int, pagina: int} $filtros
+ * @var array{items: list<array<string, mixed>>, total: int, paginas: int, pagina: int} $biblioteca
+ * @var list<array<string, mixed>> $playlists
+ * @var array<string, mixed>|null $playlistActiva
+ * @var array<int, array<int, string>> $plPorCancion
+ */
+
+?>
         <!-- ========================= BIBLIOTECA ========================= -->
         <section id="biblioteca" class="section library">
 
@@ -77,7 +92,6 @@
             <div class="library-grid">
 
                 <?php if ($total === 0): ?>
-
                     <div class="empty-state">
                         <div class="empty-icon">♫</div>
                         <h3>Tu biblioteca está vacía</h3>
@@ -86,7 +100,6 @@
                     </div>
 
                 <?php elseif (!$biblioteca['items']): ?>
-
                     <div class="empty-state">
                         <h3>No hay resultados</h3>
                         <p>
@@ -98,7 +111,6 @@
                     </div>
 
                 <?php else: ?>
-
                     <?php foreach ($biblioteca['items'] as $i => $item):
                         $id = (int) $item['id'];
                         $enPlaylists = $plPorCancion[$id] ?? [];
@@ -106,7 +118,7 @@
                         $datosEditar = json_encode(array_intersect_key($item, array_flip(
                             ['id', 'titulo', 'artista', 'tipo', 'genero', 'prioridad', 'estado', 'notas', 'calificacion']
                         )));
-                    ?>
+                        ?>
                         <article class="album-card" id="cancion-<?= $id ?>">
 
                             <?php if (!empty($item['portada_url'])): ?>

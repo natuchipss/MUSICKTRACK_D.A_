@@ -20,8 +20,10 @@ if (!preg_match('#^https://#', $portada)) {
 }
 
 // Si la canción de Spotify ya estaba en la biblioteca del usuario, se actualiza en vez de duplicarla
-$sql = "INSERT INTO canciones (usuario_id, spotify_id, spotify_tipo, titulo, artista, tipo, genero, prioridad, estado, notas, portada_url)
-        VALUES (:uid, :spotify_id, :spotify_tipo, :titulo, :artista, :tipo, :genero, :prioridad, :estado, :notas, :portada)
+$sql = "INSERT INTO canciones (usuario_id, spotify_id, spotify_tipo, titulo, artista, tipo,
+                               genero, prioridad, estado, notas, portada_url)
+        VALUES (:uid, :spotify_id, :spotify_tipo, :titulo, :artista, :tipo,
+                :genero, :prioridad, :estado, :notas, :portada)
         ON DUPLICATE KEY UPDATE
             titulo = VALUES(titulo), artista = VALUES(artista), tipo = VALUES(tipo),
             genero = VALUES(genero), prioridad = VALUES(prioridad), estado = VALUES(estado),

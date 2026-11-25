@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../includes/auth.php';
 accion_protegida(false);
 
@@ -7,17 +8,26 @@ $email     = mb_strtolower(trim($_POST['email'] ?? ''));
 $password  = (string) ($_POST['password'] ?? '');
 $confirmar = (string) ($_POST['confirmar'] ?? '');
 
-function error_registro(string $codigo, string $nombre, string $email): never {
+function error_registro(string $codigo, string $nombre, string $email): never
+{
     $_SESSION['viejo_nombre'] = $nombre;
     $_SESSION['viejo_email']  = $email;
     header('Location: ../registro.php?error=' . $codigo);
     exit;
 }
 
-if (mb_strlen($nombre) < 2 || mb_strlen($nombre) > 80) error_registro('nombre', $nombre, $email);
-if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 190) error_registro('email', $nombre, $email);
-if (mb_strlen($password) < 8) error_registro('password', $nombre, $email);
-if ($password !== $confirmar) error_registro('confirmar', $nombre, $email);
+if (mb_strlen($nombre) < 2 || mb_strlen($nombre) > 80) {
+    error_registro('nombre', $nombre, $email);
+}
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 190) {
+    error_registro('email', $nombre, $email);
+}
+if (mb_strlen($password) < 8) {
+    error_registro('password', $nombre, $email);
+}
+if ($password !== $confirmar) {
+    error_registro('confirmar', $nombre, $email);
+}
 
 $pdo = db();
 

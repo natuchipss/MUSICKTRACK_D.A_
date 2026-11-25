@@ -1,4 +1,5 @@
 <?php
+
 // Borra la playlist (las canciones siguen en la biblioteca)
 require_once __DIR__ . '/../includes/auth.php';
 accion_protegida();

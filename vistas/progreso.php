@@ -1,3 +1,15 @@
+<?php
+
+/**
+ * Vista progreso: la incluye index.php, que define estas variables.
+ *
+ * @var array<string, int> $conteos
+ * @var int $total
+ * @var int $porcentaje
+ * @var array{conteos: array<string, int>, total: int, porcentaje: int, porGenero: list<array<string, mixed>>, topArtistas: list<array<string, mixed>>, promedio: ?float, calificadas: int} $stats
+ */
+
+?>
         <!-- ========================= PROGRESO Y ESTADÍSTICAS ========================= -->
         <section id="progreso" class="section">
 

@@ -1,4 +1,5 @@
 <?php
+
 // Endpoint: recibe un link de Spotify pegado por el usuario y devuelve la canción o el álbum.
 // Primero usa la API; si falla (por ejemplo, venció el Premium), usa el oEmbed público.
 require __DIR__ . '/../includes/auth.php';

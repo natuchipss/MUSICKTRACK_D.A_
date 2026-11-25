@@ -1,4 +1,5 @@
 <?php
+
 // Endpoint: busca canciones (tipo=track) o álbumes (tipo=album) en Spotify y devuelve JSON
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/spotify.php';

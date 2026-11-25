@@ -1,4 +1,5 @@
 <?php
+
 // Endpoint: guarda en MySQL una canción o álbum elegido de los resultados de Spotify (guardado rápido)
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/genero.php';
@@ -40,7 +41,8 @@ if (!is_string($portada) || !preg_match('#^https://#', $portada)) {
 $genero = detectar_genero($titulo, $artista, $spotifyTipo)['genero'] ?? null;
 
 $stmt = db()->prepare(
-    "INSERT INTO canciones (usuario_id, spotify_id, spotify_tipo, titulo, artista, tipo, genero, prioridad, estado, portada_url)
+    "INSERT INTO canciones (usuario_id, spotify_id, spotify_tipo, titulo, artista, tipo,
+                            genero, prioridad, estado, portada_url)
      VALUES (:uid, :id, :stipo, :titulo, :artista, :tipo, :genero, 'media', 'pendiente', :portada)
      ON DUPLICATE KEY UPDATE titulo = VALUES(titulo), artista = VALUES(artista), portada_url = VALUES(portada_url)"
 );

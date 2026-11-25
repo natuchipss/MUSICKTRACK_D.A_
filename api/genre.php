@@ -1,4 +1,5 @@
 <?php
+
 // Endpoint: sugiere el género de una canción o álbum (según Deezer) y devuelve JSON
 require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/genero.php';
