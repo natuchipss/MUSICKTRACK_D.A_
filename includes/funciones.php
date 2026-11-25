@@ -57,6 +57,7 @@ const POR_PAGINA = 9;
 const LARGO_TITULO       = 150; // VARCHAR(150) de titulo y artista
 const LARGO_URL_PORTADA  = 500; // VARCHAR(500) de portada_url
 const CALIFICACION_MAXIMA = 5;
+const LARGO_BUSQUEDA      = 100; // caracteres del buscador de la biblioteca
 
 // Clase CSS de cada estado y prioridad (badges)
 const CLASE_ESTADO    = ['pendiente' => 'pending', 'escuchando' => 'listening', 'escuchado' => 'finished'];
@@ -64,6 +65,18 @@ const CLASE_PRIORIDAD = ['alta' => 'high', 'media' => 'medium', 'baja' => 'low']
 
 // Parámetros de la biblioteca que se conservan al volver de una acción
 const PARAMS_BIBLIOTECA = ['q', 'estado', 'orden', 'playlist', 'pagina'];
+
+/**
+ * Texto de un campo de $_POST o $_GET, sin espacios a los lados.
+ * Si llega un arreglo (ej. estado[]=x) se trata como vacío en vez de provocar un error.
+ *
+ * @param array<string, mixed> $datos
+ */
+function campo_texto(array $datos, string $campo): string
+{
+    $valor = $datos[$campo] ?? '';
+    return is_scalar($valor) ? trim((string) $valor) : '';
+}
 
 // Escapa texto para imprimirlo en HTML (evita XSS)
 function e(?string $texto): string {

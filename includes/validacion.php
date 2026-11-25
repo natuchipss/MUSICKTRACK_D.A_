@@ -35,18 +35,6 @@ function validar_cancion(array $post): ?array
     return $completo ? $datos : null;
 }
 
-/**
- * Texto de un campo del formulario, sin espacios a los lados.
- * Si llega un arreglo (ej. titulo[]=x) se trata como vacío en vez de provocar un error.
- *
- * @param array<string, mixed> $post
- */
-function campo_texto(array $post, string $campo): string
-{
-    $valor = $post[$campo] ?? '';
-    return is_scalar($valor) ? trim((string) $valor) : '';
-}
-
 /** Calificación válida: 0 (sin calificar) a 5 estrellas. */
 function calificacion_valida(int $calificacion): bool
 {

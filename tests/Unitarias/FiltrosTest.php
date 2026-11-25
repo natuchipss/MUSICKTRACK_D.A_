@@ -34,6 +34,22 @@ final class FiltrosTest extends TestCase
         $this->assertSame(['q' => 'Feid', 'estado' => 'escuchado', 'orden' => 'prioridad', 'playlist' => 3, 'pagina' => 2], $f);
     }
 
+    #[TestDox('CP-04 Un filtro enviado como arreglo (?estado[]=x) no rompe la página (agregada con R4)')]
+    public function testFiltrosComoArreglo(): void
+    {
+        $f = leer_filtros(['estado' => ['pendiente'], 'orden' => ['titulo'], 'q' => ['a'], 'pagina' => ['2']]);
+
+        $this->assertSame(['q' => '', 'estado' => '', 'orden' => 'recientes', 'playlist' => 0, 'pagina' => 1], $f);
+    }
+
+    #[TestDox('CP-04 La paginación calcula la página, el total de páginas y el desplazamiento (agregada con R4)')]
+    public function testPaginar(): void
+    {
+        $this->assertSame(['pagina' => 1, 'paginas' => 1, 'offset' => 0], paginar(0, 1));
+        $this->assertSame(['pagina' => 2, 'paginas' => 2, 'offset' => 9], paginar(10, 2));
+        $this->assertSame(['pagina' => 2, 'paginas' => 2, 'offset' => 9], paginar(10, 50), 'página inexistente → la última');
+    }
+
     #[TestDox('CP-04 La URL de la biblioteca omite los valores por defecto')]
     public function testUrlBiblioteca(): void
     {
