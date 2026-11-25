@@ -4,21 +4,15 @@
 // así que se consulta la API pública de Deezer (gratis y sin clave): se busca la canción,
 // se toma su álbum y se leen los géneros del álbum.
 
+require_once __DIR__ . '/http.php';
+
+const DEEZER_SEGUNDOS = 6; // el género es opcional: no se hace esperar mucho al usuario
+
 // GET a la API de Deezer; devuelve el JSON decodificado o null si falla
 function deezer_get(string $url): ?array {
-    $ch = curl_init($url);
-    curl_setopt_array($ch, [
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_TIMEOUT        => 6,
-    ]);
-    $respuesta = curl_exec($ch);
-    $status    = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-    if ($respuesta === false || $status !== 200) {
-        return null;
-    }
-    $data = json_decode($respuesta, true);
-    return is_array($data) && !isset($data['error']) ? $data : null;
+    $data = http_json_o_null($url, DEEZER_SEGUNDOS);
+    // Deezer responde 200 con {"error": {...}} cuando la consulta no es válida
+    return $data !== null && !isset($data['error']) ? $data : null;
 }
 
 // Pasa a minúsculas y quita tildes para comparar nombres
