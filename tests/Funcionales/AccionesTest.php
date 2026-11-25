@@ -114,6 +114,10 @@ final class AccionesTest extends TestCase
         $this->ana->post('acciones/calificar.php', ['csrf' => $this->csrf, 'id' => (string) $id, 'calificacion' => '7']);
         $this->assertSame(4, (int) $this->fila($id)['calificacion']);
 
+        $sinValor = $this->ana->post('acciones/calificar.php', ['csrf' => $this->csrf, 'id' => (string) $id]);
+        $this->assertSame(4, (int) $this->fila($id)['calificacion'], 'sin valor no se borra la calificación');
+        $this->assertStringContainsString('ok=incompleto', $sinValor['location'], 'agregada con R5');
+
         $this->ana->post('acciones/calificar.php', ['csrf' => $this->csrf, 'id' => (string) $id, 'calificacion' => '0']);
         $this->assertNull($this->fila($id)['calificacion']);
     }
