@@ -1,0 +1,13 @@
+# Análisis estático con PHPStan. Ver docs/EVALUACION_SOFTWARE.md
+parameters:
+    level: 6
+    paths:
+        - acciones
+        - api
+        - includes
+        - vistas
+        - index.php
+        - login.php
+        - registro.php
+    excludePaths:
+        - includes/config.php (?)

@@ -1,0 +1,33 @@
+﻿acciones\registro.php:14   ExitExpression        The function error_registro() contains an exit expression.
+includes\auth.php:47       ExitExpression        The function requerir_login() contains an exit expression.
+includes\auth.php:66       BooleanArgumentFlag   The method accion_protegida has a boolean flag argument $requiereUsuario, which is a certain sign of a Single Responsibility Principle violation.
+includes\auth.php:69       ExitExpression        The function accion_protegida() contains an exit expression.
+includes\auth.php:73       ExitExpression        The function accion_protegida() contains an exit expression.
+includes\auth.php:77       ExitExpression        The function accion_protegida() contains an exit expression.
+includes\auth.php:88       ExitExpression        The function api_protegida() contains an exit expression.
+includes\auth.php:92       ExitExpression        The function api_protegida() contains an exit expression.
+includes\consultas.php:16  ShortVariable         Avoid variables with short names like $f. Configured minimum length is 3.
+includes\consultas.php:27  ShortVariable         Avoid variables with short names like $n. Configured minimum length is 3.
+includes\consultas.php:32  ShortVariable         Avoid variables with short names like $i. Configured minimum length is 3.
+includes\db.php:3          ShortMethodName       Avoid using short method names like ::db(). The configured minimum method name length is 3.
+includes\db.php:7          ShortVariable         Avoid variables with short names like $c. Configured minimum length is 3.
+includes\db.php:10         MissingImport         Missing class import via use statement (line '10', column '24').
+includes\db.php:23         ExitExpression        The function db() contains an exit expression.
+includes\funciones.php:64  ShortMethodName       Avoid using short method names like ::e(). The configured minimum method name length is 3.
+includes\funciones.php:85  ExitExpression        The function volver() contains an exit expression.
+includes\funciones.php:91  ShortVariable         Avoid variables with short names like $v. Configured minimum length is 3.
+includes\funciones.php:91  ShortVariable         Avoid variables with short names like $k. Configured minimum length is 3.
+includes\genero.php:9      ShortVariable         Avoid variables with short names like $ch. Configured minimum length is 3.
+includes\genero.php:31     NPathComplexity       The function mapear_genero() has an NPath complexity of 384. The configured NPath complexity threshold is 200.
+includes\genero.php:51     CyclomaticComplexity  The function detectar_genero() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+includes\spotify.php:17    ShortVariable         Avoid variables with short names like $ch. Configured minimum length is 3.
+includes\spotify.php:37    MissingImport         Missing class import via use statement (line '37', column '19').
+includes\spotify.php:42    MissingImport         Missing class import via use statement (line '42', column '19').
+includes\spotify.php:55    ShortVariable         Avoid variables with short names like $ch. Configured minimum length is 3.
+includes\spotify.php:66    MissingImport         Missing class import via use statement (line '66', column '19').
+includes\spotify.php:70    MissingImport         Missing class import via use statement (line '70', column '19').
+includes\spotify.php:90    ShortVariable         Avoid variables with short names like $q. Configured minimum length is 3.
+includes\spotify.php:104   ShortVariable         Avoid variables with short names like $id. Configured minimum length is 3.
+includes\spotify.php:110   ShortVariable         Avoid variables with short names like $id. Configured minimum length is 3.
+includes\spotify.php:112   ShortVariable         Avoid variables with short names like $ch. Configured minimum length is 3.
+includes\spotify.php:132   ShortVariable         Avoid variables with short names like $m. Configured minimum length is 3.

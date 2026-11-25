@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pruebas automatizadas de MusicTrack. Ver docs/PRUEBAS_SOFTWARE.md -->
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.5/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         colors="false"
+         cacheDirectory=".phpunit.cache"
+         failOnWarning="true">
+    <testsuites>
+        <testsuite name="unitarias">
+            <directory>tests/Unitarias</directory>
+        </testsuite>
+        <testsuite name="integracion">
+            <directory>tests/Integracion</directory>
+        </testsuite>
+        <testsuite name="funcionales">
+            <directory>tests/Funcionales</directory>
+        </testsuite>
+        <testsuite name="externas">
+            <directory>tests/Externas</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

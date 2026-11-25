@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- Estándar de codificación de MusicTrack (PHP_CodeSniffer). Ver docs/EVALUACION_SOFTWARE.md -->
+<ruleset name="MusicTrack">
+    <description>PSR-12 aplicado al código propio de MusicTrack.</description>
+
+    <file>acciones</file>
+    <file>api</file>
+    <file>includes</file>
+    <file>vistas</file>
+    <file>index.php</file>
+    <file>login.php</file>
+    <file>registro.php</file>
+
+    <!-- Credenciales locales: no es código del proyecto y no está en Git -->
+    <exclude-pattern>includes/config.php</exclude-pattern>
+
+    <arg name="extensions" value="php"/>
+
+    <rule ref="PSR12">
+        <!-- Git guarda los archivos con LF; en Windows core.autocrlf los entrega con CRLF.
+             Medirlo contaría el entorno, no el código. -->
+        <exclude name="Generic.Files.LineEndings"/>
+    </rule>
+
+    <!-- Las vistas son plantillas HTML con sintaxis alternativa (if: ... endif;).
+         Estas reglas de PSR-12 están pensadas para archivos de lógica y no aplican a plantillas. -->
+    <rule ref="Squiz.ControlStructures.ControlSignature">
+        <exclude-pattern>vistas/*</exclude-pattern>
+    </rule>
+    <rule ref="PSR12.Files.FileHeader">
+        <exclude-pattern>vistas/*</exclude-pattern>
+    </rule>
+    <rule ref="Generic.Files.LineLength">
+        <exclude-pattern>vistas/*</exclude-pattern>
+    </rule>
+</ruleset>

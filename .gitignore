@@ -4,3 +4,6 @@ includes/config.php
 
 # Configuración local de Claude
 .claude/
+
+# Caché de PHPUnit
+.phpunit.cache/

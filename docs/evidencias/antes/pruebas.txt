@@ -1,0 +1,66 @@
+PHPUnit 11.5.58 by Sebastian Bergmann and contributors.
+
+Runtime:       PHP 8.2.12
+Configuration: phpunit.xml
+
+................................F....                             37 / 37 (100%)
+
+Time: 00:07.174, Memory: 26.00 MB
+
+Acciones (MusicTrack\Tests\Funcionales\Acciones)
+ ✔ CP-08 Registrar: guarda una canción válida y rechaza una con datos inválidos
+ ✔ CP-09 Editar: actualiza la canción propia y no permite tocar la de otro usuario
+ ✘ CP-10 Cambiar estado: un estado válido se guarda y uno inválido se rechaza avisando al usuario
+   │
+   │ no debe decir "Cambios guardados" si no guardó nada
+   │ Failed asserting that '../index.php?ok=actualizado#cancion-1' [ASCII](length: 37) does not contain "ok=actualizado" [ASCII](length: 14).
+   │
+   │ tests\Funcionales\AccionesTest.php:102
+   │
+ ✔ CP-11 Calificar: acepta de 1 a 5, 0 la quita y fuera de rango no cambia nada
+ ✔ CP-12 Seguridad: sin token CSRF responde 403 y la API sin sesión responde 401
+
+Biblioteca (MusicTrack\Tests\Integracion\Biblioteca)
+ ✔ CP-05 Cada usuario solo ve su biblioteca y los filtros se aplican en el servidor
+ ✔ CP-05 La paginación muestra 9 por página y corrige páginas fuera de rango
+ ✔ CP-06 Las estadísticas cuentan estados, porcentaje, artista principal y promedio
+ ✔ CP-07 Un usuario no puede repetir un ID de Spotify y borrar una canción la quita de sus playlists
+
+Deezer (MusicTrack\Tests\Externas\Deezer)
+ ✔ CP-13 Detecta el género de una canción conocida consultando Deezer
+ ✔ CP-13 Si Deezer no tiene el artista, devuelve null sin lanzar errores
+
+Filtros (MusicTrack\Tests\Unitarias\Filtros)
+ ✔ CP-04 Los filtros inválidos se reemplazan por valores seguros
+ ✔ CP-04 Los filtros válidos se conservan
+ ✔ CP-04 La URL de la biblioteca omite los valores por defecto
+
+Genero (MusicTrack\Tests\Unitarias\Genero)
+ ✔ CP-03 Mapea el género: reggaetón explícito
+ ✔ CP-03 Mapea el género: latino + rap = urbano
+ ✔ CP-03 Mapea el género: latino + dance = urbano
+ ✔ CP-03 Mapea el género: salsa es latina
+ ✔ CP-03 Mapea el género: rap sin latino
+ ✔ CP-03 Mapea el género: R&B
+ ✔ CP-03 Mapea el género: metal es rock
+ ✔ CP-03 Mapea el género: indie es rock
+ ✔ CP-03 Mapea el género: house es electrónica
+ ✔ CP-03 Mapea el género: soul es jazz/blues
+ ✔ CP-03 Mapea el género: pop
+ ✔ CP-03 Mapea el género: tildes y mayúsculas
+ ✔ CP-03 Mapea el género: sin coincidencia
+ ✔ CP-03 Mapea el género: lista vacía
+ ✔ CP-03 Todo género que devuelve el mapeo existe en el catálogo GENEROS
+
+Spotify (MusicTrack\Tests\Unitarias\Spotify)
+ ✔ CP-01 Lee el link: link de canción con ?si=
+ ✔ CP-01 Lee el link: link de álbum con idioma
+ ✔ CP-01 Lee el link: URI de Spotify
+ ✔ CP-01 Lee el link: playlist (no se admite)
+ ✔ CP-01 Lee el link: ID de longitud incorrecta
+ ✔ CP-01 Lee el link: texto que no es un link
+ ✔ CP-02 Convierte una canción de Spotify: une los artistas y toma la portada del álbum
+ ✔ CP-02 Convierte un álbum de Spotify: la portada está en images y puede faltar
+
+FAILURES!
+Tests: 37, Assertions: 91, Failures: 1.

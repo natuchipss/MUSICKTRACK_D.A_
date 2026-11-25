@@ -1,0 +1,36 @@
+﻿
+PHP CODE SNIFFER REPORT SUMMARY
+--------------------------------------------------------------------------------------------------------------------------------------------
+FILE                                                                                                                        ERRORS  WARNINGS
+--------------------------------------------------------------------------------------------------------------------------------------------
+login.php   1       0
+...ers\salce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\registro.php  1       0
+...ppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\actualizar.php  1       0
+...AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\calificar.php  1       0
+...\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\eliminar.php  1       0
+...ce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\estado.php  1       0
+...lce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\login.php  1       0
+...ce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\logout.php  1       0
+...\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\playlist_cancion.php  1       0
+...ta\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\playlist_crear.php  1       0
+...Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\playlist_eliminar.php  1       0
+...AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\registrar.php  1       2
+...\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\acciones\registro.php  6       1
+...rs\salce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\api\genre.php  1       0
+...ers\salce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\api\link.php  1       0
+...ers\salce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\api\save.php  1       1
+...s\salce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\api\search.php  1       0
+...alce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\includes\auth.php  11      1
+...ta\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\includes\config.example.php  1       0
+...AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\includes\consultas.php  6       1
+...\salce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\includes\db.php  2       0
+...AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\includes\funciones.php  9       0
+...ce\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\includes\genero.php  13      0
+...e\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\includes\spotify.php  10      0
+...\AppData\Local\Temp\claude\0034ab76fc074e0f\89d697aa-3834-4c79-b150-fbbf0ae37dac\scratchpad\antes\vistas\biblioteca.php  4       0
+--------------------------------------------------------------------------------------------------------------------------------------------
+A TOTAL OF 78 ERRORS AND 6 WARNINGS WERE FOUND IN 25 FILES
+--------------------------------------------------------------------------------------------------------------------------------------------
+PHPCBF CAN FIX 78 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+--------------------------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- Solo para medir: PHPMD informa la complejidad ciclomática de TODAS las funciones
+     (umbral 1) para construir la tabla de docs/METRICAS_SOFTWARE.md. -->
+<ruleset name="MusicTrack-complejidad"
+         xmlns="http://pmd.sf.net/ruleset/1.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd">
+    <description>Complejidad ciclomática por función.</description>
+    <rule ref="rulesets/codesize.xml/CyclomaticComplexity">
+        <properties>
+            <property name="reportLevel" value="1"/>
+        </properties>
+    </rule>
+</ruleset>
