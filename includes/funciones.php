@@ -53,6 +53,11 @@ const ORDEN_SQL = [
 // Canciones por página en la biblioteca
 const POR_PAGINA = 9;
 
+// Límites de los datos de una canción (coinciden con la tabla `canciones`)
+const LARGO_TITULO       = 150; // VARCHAR(150) de titulo y artista
+const LARGO_URL_PORTADA  = 500; // VARCHAR(500) de portada_url
+const CALIFICACION_MAXIMA = 5;
+
 // Clase CSS de cada estado y prioridad (badges)
 const CLASE_ESTADO    = ['pendiente' => 'pending', 'escuchando' => 'listening', 'escuchado' => 'finished'];
 const CLASE_PRIORIDAD = ['alta' => 'high', 'media' => 'medium', 'baja' => 'low'];

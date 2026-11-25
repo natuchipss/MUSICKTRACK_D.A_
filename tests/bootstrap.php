@@ -7,6 +7,7 @@ require_once __DIR__ . '/../includes/funciones.php';
 require_once __DIR__ . '/../includes/consultas.php';
 require_once __DIR__ . '/../includes/spotify.php';
 require_once __DIR__ . '/../includes/genero.php';
+require_once __DIR__ . '/../includes/validacion.php';
 
 require_once __DIR__ . '/Soporte/BaseDatosPrueba.php';
 require_once __DIR__ . '/Soporte/ServidorPrueba.php';

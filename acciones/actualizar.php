@@ -1,22 +1,15 @@
 <?php
+
 // Editar una canción desde el modal "Editar"
 require_once __DIR__ . '/../includes/auth.php';
+require_once __DIR__ . '/../includes/validacion.php';
 accion_protegida();
 
 $id           = (int) ($_POST['id'] ?? 0);
-$titulo       = trim($_POST['titulo'] ?? '');
-$artista      = trim($_POST['artista'] ?? '');
-$tipo         = $_POST['tipo'] ?? '';
-$genero       = $_POST['genero'] ?? '';
-$prioridad    = $_POST['prioridad'] ?? '';
-$estado       = $_POST['estado'] ?? '';
-$notas        = trim($_POST['notas'] ?? '');
 $calificacion = (int) ($_POST['calificacion'] ?? 0);
+$cancion      = validar_cancion($_POST);
 
-$valido = $id > 0 && $titulo !== '' && $artista !== '' && $calificacion >= 0 && $calificacion <= 5
-    && isset(TIPOS[$tipo], GENEROS[$genero], PRIORIDADES[$prioridad], ESTADOS[$estado]);
-
-if (!$valido) {
+if ($id <= 0 || $cancion === null || !calificacion_valida($calificacion)) {
     volver('incompleto');
 }
 
@@ -26,13 +19,13 @@ db()->prepare('UPDATE canciones
                    prioridad = :prioridad, estado = :estado, notas = :notas, calificacion = :calificacion
                WHERE id = :id AND usuario_id = :uid')
     ->execute([
-        ':titulo'       => mb_substr($titulo, 0, 150),
-        ':artista'      => mb_substr($artista, 0, 150),
-        ':tipo'         => $tipo,
-        ':genero'       => $genero,
-        ':prioridad'    => $prioridad,
-        ':estado'       => $estado,
-        ':notas'        => $notas !== '' ? $notas : null,
+        ':titulo'       => $cancion['titulo'],
+        ':artista'      => $cancion['artista'],
+        ':tipo'         => $cancion['tipo'],
+        ':genero'       => $cancion['genero'],
+        ':prioridad'    => $cancion['prioridad'],
+        ':estado'       => $cancion['estado'],
+        ':notas'        => $cancion['notas'],
         ':calificacion' => $calificacion > 0 ? $calificacion : null,
         ':id'           => $id,
         ':uid'          => usuario_id(),
