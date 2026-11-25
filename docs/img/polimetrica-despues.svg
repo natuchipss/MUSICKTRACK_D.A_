@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" font-family="Arial, sans-serif" font-size="11" fill="#222">
+  <!-- Vista polimétrica DESPUÉS (commit cf7cea2). Alto = LOC (1 px por línea), ancho = funciones (12 px c/u), color = CC máxima -->
+  <rect width="760" height="300" fill="#ffffff"/>
+  <text x="10" y="20" font-size="14" font-weight="bold">Después (commit cf7cea2)</text>
+  <text x="10" y="36" fill="#555">Alto: LOC · Ancho: funciones · Color: complejidad ciclomática máxima</text>
+
+  <line x1="10" y1="255" x2="750" y2="255" stroke="#999"/>
+  <rect x="20"  y="130" width="72"  height="125" fill="#e3b341"/>
+  <rect x="115" y="48"  width="96"  height="207" fill="#57ab5a"/>
+  <rect x="235" y="103" width="84"  height="152" fill="#57ab5a"/>
+  <rect x="340" y="113" width="72"  height="142" fill="#e3b341"/>
+  <rect x="435" y="148" width="120" height="107" fill="#57ab5a"/>
+  <rect x="575" y="201" width="24"  height="54"  fill="#57ab5a"/>
+  <rect x="640" y="214" width="24"  height="41"  fill="#e3b341"/>
+
+  <text x="20"  y="271">genero</text><text x="20"  y="284" fill="#555">125 · 6 f · CC 6</text>
+  <text x="115" y="271">consultas</text><text x="115" y="284" fill="#555">207 · 8 f · CC 4</text>
+  <text x="235" y="271">spotify</text><text x="235" y="284" fill="#555">152 · 7 f · CC 5</text>
+  <text x="340" y="271">funciones</text><text x="340" y="284" fill="#555">142 · 6 f · CC 8</text>
+  <text x="435" y="271">auth</text><text x="435" y="284" fill="#555">107 · 10 f · CC 5</text>
+  <text x="565" y="271">http</text><text x="565" y="284" fill="#555">54 · 2 f · 4</text>
+  <text x="630" y="271">validacion</text><text x="630" y="284" fill="#555">41 · 2 f · 6</text>
+
+  <rect x="660" y="60"  width="12" height="12" fill="#57ab5a"/><text x="678" y="70">CC 1-5</text>
+  <rect x="660" y="80"  width="12" height="12" fill="#e3b341"/><text x="678" y="90">CC 6-10</text>
+  <rect x="660" y="100" width="12" height="12" fill="#e5534b"/><text x="678" y="110">CC 11+</text>
+</svg>

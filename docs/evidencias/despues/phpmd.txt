@@ -1,0 +1,23 @@
+﻿acciones\registro.php:16    ExitExpression       The function error_registro() contains an exit expression.
+includes\auth.php:55        ExitExpression       The function requerir_login() contains an exit expression.
+includes\auth.php:77        BooleanArgumentFlag  The method accion_protegida has a boolean flag argument $requiereUsuario, which is a certain sign of a Single Responsibility Principle violation.
+includes\auth.php:81        ExitExpression       The function accion_protegida() contains an exit expression.
+includes\auth.php:85        ExitExpression       The function accion_protegida() contains an exit expression.
+includes\auth.php:89        ExitExpression       The function accion_protegida() contains an exit expression.
+includes\auth.php:101       ExitExpression       The function api_protegida() contains an exit expression.
+includes\auth.php:105       ExitExpression       The function api_protegida() contains an exit expression.
+includes\db.php:4           ShortMethodName      Avoid using short method names like ::db(). The configured minimum method name length is 3.
+includes\db.php:9           ShortVariable        Avoid variables with short names like $c. Configured minimum length is 3.
+includes\db.php:12          MissingImport        Missing class import via use statement (line '12', column '24').
+includes\db.php:25          ExitExpression       The function db() contains an exit expression.
+includes\funciones.php:94   ShortMethodName      Avoid using short method names like ::e(). The configured minimum method name length is 3.
+includes\funciones.php:122  ExitExpression       The function volver() contains an exit expression.
+includes\funciones.php:136  ShortVariable        Avoid variables with short names like $v. Configured minimum length is 3.
+includes\funciones.php:136  ShortVariable        Avoid variables with short names like $k. Configured minimum length is 3.
+includes\http.php:16        ShortVariable        Avoid variables with short names like $ch. Configured minimum length is 3.
+includes\http.php:31        MissingImport        Missing class import via use statement (line '31', column '19').
+includes\http.php:47        ShortVariable        Avoid variables with short names like $r. Configured minimum length is 3.
+includes\spotify.php:28     ShortVariable        Avoid variables with short names like $r. Configured minimum length is 3.
+includes\spotify.php:37     MissingImport        Missing class import via use statement (line '37', column '19').
+includes\spotify.php:55     ShortVariable        Avoid variables with short names like $r. Configured minimum length is 3.
+includes\spotify.php:59     MissingImport        Missing class import via use statement (line '59', column '19').

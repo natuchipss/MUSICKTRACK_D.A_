@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="phpunit.xml" tests="46" assertions="135" errors="0" failures="0" skipped="0" time="7.817647">
+    <testsuite name="unitarias" tests="31" assertions="63" errors="0" failures="0" skipped="0" time="0.003554">
+      <testsuite name="MusicTrack\Tests\Unitarias\FiltrosTest" file="tests\Unitarias\FiltrosTest.php" tests="5" assertions="13" errors="0" failures="0" skipped="0" time="0.000524">
+        <testcase name="testFiltrosInvalidos" file="tests\Unitarias\FiltrosTest.php" line="12" class="MusicTrack\Tests\Unitarias\FiltrosTest" classname="MusicTrack.Tests.Unitarias.FiltrosTest" assertions="5" time="0.000187"/>
+        <testcase name="testFiltrosValidos" file="tests\Unitarias\FiltrosTest.php" line="30" class="MusicTrack\Tests\Unitarias\FiltrosTest" classname="MusicTrack.Tests.Unitarias.FiltrosTest" assertions="1" time="0.000093"/>
+        <testcase name="testFiltrosComoArreglo" file="tests\Unitarias\FiltrosTest.php" line="38" class="MusicTrack\Tests\Unitarias\FiltrosTest" classname="MusicTrack.Tests.Unitarias.FiltrosTest" assertions="1" time="0.000076"/>
+        <testcase name="testPaginar" file="tests\Unitarias\FiltrosTest.php" line="46" class="MusicTrack\Tests\Unitarias\FiltrosTest" classname="MusicTrack.Tests.Unitarias.FiltrosTest" assertions="3" time="0.000071"/>
+        <testcase name="testUrlBiblioteca" file="tests\Unitarias\FiltrosTest.php" line="54" class="MusicTrack\Tests\Unitarias\FiltrosTest" classname="MusicTrack.Tests.Unitarias.FiltrosTest" assertions="3" time="0.000097"/>
+      </testsuite>
+      <testsuite name="MusicTrack\Tests\Unitarias\GeneroTest" file="tests\Unitarias\GeneroTest.php" tests="15" assertions="26" errors="0" failures="0" skipped="0" time="0.001812">
+        <testsuite name="MusicTrack\Tests\Unitarias\GeneroTest::testMapearGenero" tests="14" assertions="14" errors="0" failures="0" skipped="0" time="0.001731">
+          <testcase name="testMapearGenero with data set &quot;reggaetón explícito&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000210"/>
+          <testcase name="testMapearGenero with data set &quot;latino + rap = urbano&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000145"/>
+          <testcase name="testMapearGenero with data set &quot;latino + dance = urbano&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000106"/>
+          <testcase name="testMapearGenero with data set &quot;salsa es latina&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000102"/>
+          <testcase name="testMapearGenero with data set &quot;rap sin latino&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000121"/>
+          <testcase name="testMapearGenero with data set &quot;R&amp;B&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000099"/>
+          <testcase name="testMapearGenero with data set &quot;metal es rock&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000144"/>
+          <testcase name="testMapearGenero with data set &quot;indie es rock&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000107"/>
+          <testcase name="testMapearGenero with data set &quot;house es electrónica&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000128"/>
+          <testcase name="testMapearGenero with data set &quot;soul es jazz/blues&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000119"/>
+          <testcase name="testMapearGenero with data set &quot;pop&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000115"/>
+          <testcase name="testMapearGenero with data set &quot;tildes y mayúsculas&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000110"/>
+          <testcase name="testMapearGenero with data set &quot;sin coincidencia&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000121"/>
+          <testcase name="testMapearGenero with data set &quot;lista vacía&quot;" file="tests\Unitarias\GeneroTest.php" line="36" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="1" time="0.000103"/>
+        </testsuite>
+        <testcase name="testGenerosValidos" file="tests\Unitarias\GeneroTest.php" line="42" class="MusicTrack\Tests\Unitarias\GeneroTest" classname="MusicTrack.Tests.Unitarias.GeneroTest" assertions="12" time="0.000082"/>
+      </testsuite>
+      <testsuite name="MusicTrack\Tests\Unitarias\SpotifyTest" file="tests\Unitarias\SpotifyTest.php" tests="8" assertions="10" errors="0" failures="0" skipped="0" time="0.000939">
+        <testsuite name="MusicTrack\Tests\Unitarias\SpotifyTest::testParsearLink" tests="6" assertions="6" errors="0" failures="0" skipped="0" time="0.000790">
+          <testcase name="testParsearLink with data set &quot;link de canción con ?si=&quot;" file="tests\Unitarias\SpotifyTest.php" line="29" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="1" time="0.000205"/>
+          <testcase name="testParsearLink with data set &quot;link de álbum con idioma&quot;" file="tests\Unitarias\SpotifyTest.php" line="29" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="1" time="0.000117"/>
+          <testcase name="testParsearLink with data set &quot;URI de Spotify&quot;" file="tests\Unitarias\SpotifyTest.php" line="29" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="1" time="0.000148"/>
+          <testcase name="testParsearLink with data set &quot;playlist (no se admite)&quot;" file="tests\Unitarias\SpotifyTest.php" line="29" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="1" time="0.000104"/>
+          <testcase name="testParsearLink with data set &quot;ID de longitud incorrecta&quot;" file="tests\Unitarias\SpotifyTest.php" line="29" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="1" time="0.000120"/>
+          <testcase name="testParsearLink with data set &quot;texto que no es un link&quot;" file="tests\Unitarias\SpotifyTest.php" line="29" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="1" time="0.000097"/>
+        </testsuite>
+        <testcase name="testFormatearCancion" file="tests\Unitarias\SpotifyTest.php" line="35" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="1" time="0.000076"/>
+        <testcase name="testFormatearAlbum" file="tests\Unitarias\SpotifyTest.php" line="50" class="MusicTrack\Tests\Unitarias\SpotifyTest" classname="MusicTrack.Tests.Unitarias.SpotifyTest" assertions="3" time="0.000073"/>
+      </testsuite>
+      <testsuite name="MusicTrack\Tests\Unitarias\ValidacionTest" file="tests\Unitarias\ValidacionTest.php" tests="3" assertions="14" errors="0" failures="0" skipped="0" time="0.000278">
+        <testcase name="testDatosValidos" file="tests\Unitarias\ValidacionTest.php" line="19" class="MusicTrack\Tests\Unitarias\ValidacionTest" classname="MusicTrack.Tests.Unitarias.ValidacionTest" assertions="1" time="0.000100"/>
+        <testcase name="testDatosInvalidos" file="tests\Unitarias\ValidacionTest.php" line="28" class="MusicTrack\Tests\Unitarias\ValidacionTest" classname="MusicTrack.Tests.Unitarias.ValidacionTest" assertions="8" time="0.000096"/>
+        <testcase name="testLimites" file="tests\Unitarias\ValidacionTest.php" line="38" class="MusicTrack\Tests\Unitarias\ValidacionTest" classname="MusicTrack.Tests.Unitarias.ValidacionTest" assertions="5" time="0.000083"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="integracion" tests="4" assertions="17" errors="0" failures="0" skipped="0" time="0.755220">
+      <testsuite name="MusicTrack\Tests\Integracion\BibliotecaTest" file="tests\Integracion\BibliotecaTest.php" tests="4" assertions="17" errors="0" failures="0" skipped="0" time="0.755220">
+        <testcase name="testFiltrosYAislamiento" file="tests\Integracion\BibliotecaTest.php" line="26" class="MusicTrack\Tests\Integracion\BibliotecaTest" classname="MusicTrack.Tests.Integracion.BibliotecaTest" assertions="4" time="0.224526"/>
+        <testcase name="testPaginacion" file="tests\Integracion\BibliotecaTest.php" line="48" class="MusicTrack\Tests\Integracion\BibliotecaTest" classname="MusicTrack.Tests.Integracion.BibliotecaTest" assertions="3" time="0.179100"/>
+        <testcase name="testEstadisticas" file="tests\Integracion\BibliotecaTest.php" line="63" class="MusicTrack\Tests\Integracion\BibliotecaTest" classname="MusicTrack.Tests.Integracion.BibliotecaTest" assertions="6" time="0.174906"/>
+        <testcase name="testRestricciones" file="tests\Integracion\BibliotecaTest.php" line="82" class="MusicTrack\Tests\Integracion\BibliotecaTest" classname="MusicTrack.Tests.Integracion.BibliotecaTest" assertions="4" time="0.176688"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="funcionales" tests="7" assertions="44" errors="0" failures="0" skipped="0" time="2.643627">
+      <testsuite name="MusicTrack\Tests\Funcionales\AccionesTest" file="tests\Funcionales\AccionesTest.php" tests="7" assertions="44" errors="0" failures="0" skipped="0" time="2.643627">
+        <testcase name="testRegistrar" file="tests\Funcionales\AccionesTest.php" line="50" class="MusicTrack\Tests\Funcionales\AccionesTest" classname="MusicTrack.Tests.Funcionales.AccionesTest" assertions="8" time="0.912665"/>
+        <testcase name="testActualizar" file="tests\Funcionales\AccionesTest.php" line="71" class="MusicTrack\Tests\Funcionales\AccionesTest" classname="MusicTrack.Tests.Funcionales.AccionesTest" assertions="5" time="0.335887"/>
+        <testcase name="testCambiarEstado" file="tests\Funcionales\AccionesTest.php" line="92" class="MusicTrack\Tests\Funcionales\AccionesTest" classname="MusicTrack.Tests.Funcionales.AccionesTest" assertions="5" time="0.234077"/>
+        <testcase name="testCalificar" file="tests\Funcionales\AccionesTest.php" line="107" class="MusicTrack\Tests\Funcionales\AccionesTest" classname="MusicTrack.Tests.Funcionales.AccionesTest" assertions="5" time="0.307407"/>
+        <testcase name="testPaginaPrincipal" file="tests\Funcionales\AccionesTest.php" line="126" class="MusicTrack\Tests\Funcionales\AccionesTest" classname="MusicTrack.Tests.Funcionales.AccionesTest" assertions="7" time="0.293362"/>
+        <testcase name="testEntradasComoArreglo" file="tests\Funcionales\AccionesTest.php" line="142" class="MusicTrack\Tests\Funcionales\AccionesTest" classname="MusicTrack.Tests.Funcionales.AccionesTest" assertions="9" time="0.333703"/>
+        <testcase name="testSeguridad" file="tests\Funcionales\AccionesTest.php" line="163" class="MusicTrack\Tests\Funcionales\AccionesTest" classname="MusicTrack.Tests.Funcionales.AccionesTest" assertions="5" time="0.226525"/>
+      </testsuite>
+    </testsuite>
+    <testsuite name="externas" tests="4" assertions="11" errors="0" failures="0" skipped="0" time="4.415246">
+      <testsuite name="MusicTrack\Tests\Externas\DeezerTest" file="tests\Externas\DeezerTest.php" tests="2" assertions="4" errors="0" failures="0" skipped="0" time="2.572265">
+        <testcase name="testDetectaGenero" file="tests\Externas\DeezerTest.php" line="22" class="MusicTrack\Tests\Externas\DeezerTest" classname="MusicTrack.Tests.Externas.DeezerTest" assertions="3" time="1.768177"/>
+        <testcase name="testArtistaInexistente" file="tests\Externas\DeezerTest.php" line="32" class="MusicTrack\Tests\Externas\DeezerTest" classname="MusicTrack.Tests.Externas.DeezerTest" assertions="1" time="0.804088"/>
+      </testsuite>
+      <testsuite name="MusicTrack\Tests\Externas\SpotifyApiTest" file="tests\Externas\SpotifyApiTest.php" tests="2" assertions="7" errors="0" failures="0" skipped="0" time="1.842981">
+        <testcase name="testBuscarAlbum" file="tests\Externas\SpotifyApiTest.php" line="27" class="MusicTrack\Tests\Externas\SpotifyApiTest" classname="MusicTrack.Tests.Externas.SpotifyApiTest" assertions="5" time="1.030643"/>
+        <testcase name="testIdInexistente" file="tests\Externas\SpotifyApiTest.php" line="39" class="MusicTrack\Tests\Externas\SpotifyApiTest" classname="MusicTrack.Tests.Externas.SpotifyApiTest" assertions="2" time="0.812338"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

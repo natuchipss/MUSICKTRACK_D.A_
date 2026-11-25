@@ -11,4 +11,4 @@ Found 2 clones with 14 duplicated lines in 2 files:
 0.74% duplicated lines out of 1894 total lines of code.
 Average size of duplication is 7 lines, largest clone has 7 of lines
 
-Time: 00:00.014, Memory: 2.00 MB
+Time: 00:00.009, Memory: 2.00 MB

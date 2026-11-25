@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="290" viewBox="0 0 640 290" font-family="Arial, sans-serif" font-size="11" fill="#222">
+  <!-- Vista polimétrica ANTES (commit 5f0bb3a). Alto = LOC (1 px por línea), ancho = funciones (12 px c/u), color = CC máxima -->
+  <rect width="640" height="290" fill="#ffffff"/>
+  <text x="10" y="20" font-size="14" font-weight="bold">Antes (commit 5f0bb3a)</text>
+  <text x="10" y="36" fill="#555">Alto: LOC · Ancho: funciones · Color: complejidad ciclomática máxima</text>
+
+  <line x1="10" y1="230" x2="630" y2="230" stroke="#999"/>
+  <rect x="20"  y="142" width="48"  height="88"  fill="#e5534b"/>
+  <rect x="100" y="92"  width="60"  height="138" fill="#e3b341"/>
+  <rect x="190" y="93"  width="84"  height="137" fill="#e3b341"/>
+  <rect x="305" y="134" width="48"  height="96"  fill="#e3b341"/>
+  <rect x="385" y="136" width="120" height="94"  fill="#57ab5a"/>
+
+  <text x="20"  y="246">genero</text><text x="20"  y="259" fill="#555">88 · 4 f · CC 11</text>
+  <text x="100" y="246">consultas</text><text x="100" y="259" fill="#555">138 · 5 f · CC 6</text>
+  <text x="190" y="246">spotify</text><text x="190" y="259" fill="#555">137 · 7 f · CC 6</text>
+  <text x="305" y="246">funciones</text><text x="305" y="259" fill="#555">96 · 4 f · CC 8</text>
+  <text x="385" y="246">auth</text><text x="385" y="259" fill="#555">94 · 10 f · CC 5</text>
+
+  <rect x="530" y="60"  width="12" height="12" fill="#57ab5a"/><text x="548" y="70">CC 1-5</text>
+  <rect x="530" y="80"  width="12" height="12" fill="#e3b341"/><text x="548" y="90">CC 6-10</text>
+  <rect x="530" y="100" width="12" height="12" fill="#e5534b"/><text x="548" y="110">CC 11+</text>
+</svg>

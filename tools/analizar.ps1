@@ -50,9 +50,9 @@ try {
         Out-File -Encoding utf8 "$salida\complejidad.txt"
 
     # 6. Estándar PSR-12 (configuración en phpcs.xml)
-    & $Php "$Herramientas\phpcs.phar" --standard="$Raiz\phpcs.xml" --report=summary --report-width=140 @fuentes |
+    & $Php "$Herramientas\phpcs.phar" --standard="$Raiz\phpcs.xml" --report=summary --report-width=140 --basepath="$Raiz" @fuentes |
         Out-File -Encoding utf8 "$salida\phpcs.txt"
-    & $Php "$Herramientas\phpcs.phar" --standard="$Raiz\phpcs.xml" --report=source --report-width=140 @fuentes |
+    & $Php "$Herramientas\phpcs.phar" --standard="$Raiz\phpcs.xml" --report=source --report-width=140 --basepath="$Raiz" @fuentes |
         Out-File -Encoding utf8 "$salida\phpcs-reglas.txt"
 }
 finally {
