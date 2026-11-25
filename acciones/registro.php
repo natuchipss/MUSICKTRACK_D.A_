@@ -3,10 +3,10 @@
 require_once __DIR__ . '/../includes/auth.php';
 accion_protegida(false);
 
-$nombre    = trim($_POST['nombre'] ?? '');
-$email     = mb_strtolower(trim($_POST['email'] ?? ''));
-$password  = (string) ($_POST['password'] ?? '');
-$confirmar = (string) ($_POST['confirmar'] ?? '');
+$nombre    = campo_texto($_POST, 'nombre');
+$email     = mb_strtolower(campo_texto($_POST, 'email'));
+$password  = campo_crudo($_POST, 'password');
+$confirmar = campo_crudo($_POST, 'confirmar');
 
 function error_registro(string $codigo, string $nombre, string $email): never
 {

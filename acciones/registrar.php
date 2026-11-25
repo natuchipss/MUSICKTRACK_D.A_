@@ -8,9 +8,9 @@ accion_protegida();
 $cancion = validar_cancion($_POST) ?? volver('incompleto', 'registrar');
 
 // Datos opcionales de Spotify (se llenan al elegir una canción o álbum en el buscador)
-$spotifyId   = trim($_POST['spotify_id'] ?? '');
-$spotifyTipo = ($_POST['spotify_tipo'] ?? '') === 'album' ? 'album' : 'track';
-$portada     = trim($_POST['portada_url'] ?? '');
+$spotifyId   = campo_texto($_POST, 'spotify_id');
+$spotifyTipo = campo_texto($_POST, 'spotify_tipo') === 'album' ? 'album' : 'track';
+$portada     = campo_texto($_POST, 'portada_url');
 
 if (!preg_match('/^[A-Za-z0-9]{22}$/', $spotifyId)) {
     $spotifyId = null; // registro manual, sin Spotify

@@ -79,6 +79,17 @@ function campo_texto(array $datos, string $campo): string
     return is_scalar($valor) ? trim((string) $valor) : '';
 }
 
+/**
+ * Igual que campo_texto() pero sin quitar espacios (contraseñas, consultas ya armadas).
+ *
+ * @param array<string, mixed> $datos
+ */
+function campo_crudo(array $datos, string $campo): string
+{
+    $valor = $datos[$campo] ?? '';
+    return is_scalar($valor) ? (string) $valor : '';
+}
+
 // Escapa texto para imprimirlo en HTML (evita XSS)
 function e(?string $texto): string
 {
@@ -99,7 +110,7 @@ function etiqueta(array $catalogo, ?string $valor): string
 // Los formularios envían el campo "volver" con la consulta actual (ej. "estado=pendiente&pagina=2").
 function volver(string $mensaje = '', string $ancla = 'biblioteca'): never
 {
-    parse_str((string) ($_POST['volver'] ?? ''), $params);
+    parse_str(campo_crudo($_POST, 'volver'), $params);
     $params = array_intersect_key($params, array_flip(PARAMS_BIBLIOTECA));
     if ($mensaje !== '') {
         $params['ok'] = $mensaje;

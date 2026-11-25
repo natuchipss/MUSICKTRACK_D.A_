@@ -6,7 +6,7 @@ accion_protegida();
 
 $cancionId  = (int) ($_POST['cancion_id'] ?? 0);
 $playlistId = (int) ($_POST['playlist_id'] ?? 0);
-$accion     = $_POST['accion'] ?? '';
+$accion     = campo_texto($_POST, 'accion');
 $pdo        = db();
 
 // La canción y la playlist deben ser del usuario

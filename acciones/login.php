@@ -3,8 +3,8 @@
 require_once __DIR__ . '/../includes/auth.php';
 accion_protegida(false);
 
-$email    = mb_strtolower(trim($_POST['email'] ?? ''));
-$password = (string) ($_POST['password'] ?? '');
+$email    = mb_strtolower(campo_texto($_POST, 'email'));
+$password = campo_crudo($_POST, 'password');
 
 $stmt = db()->prepare('SELECT id, nombre, password_hash FROM usuarios WHERE email = :email');
 $stmt->execute([':email' => $email]);

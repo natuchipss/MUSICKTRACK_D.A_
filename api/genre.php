@@ -5,9 +5,9 @@ require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/genero.php';
 api_protegida();
 
-$titulo  = trim($_GET['titulo'] ?? '');
-$artista = trim($_GET['artista'] ?? '');
-$tipo    = ($_GET['tipo'] ?? '') === 'album' ? 'album' : 'track';
+$titulo  = campo_texto($_GET, 'titulo');
+$artista = campo_texto($_GET, 'artista');
+$tipo    = campo_texto($_GET, 'tipo') === 'album' ? 'album' : 'track';
 
 if ($titulo === '' || $artista === '') {
     http_response_code(400);

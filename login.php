@@ -12,8 +12,8 @@ $avisos  = ['salir' => 'Cerraste sesión. ¡Vuelve pronto!'];
 
 $tituloPagina = 'Iniciar sesión';
 $modo         = 'login';
-$error        = $errores[$_GET['error'] ?? ''] ?? null;
-$aviso        = $avisos[$_GET['ok'] ?? ''] ?? null;
+$error        = $errores[campo_texto($_GET, 'error')] ?? null;
+$aviso        = $avisos[campo_texto($_GET, 'ok')] ?? null;
 $viejoEmail   = $_SESSION['viejo_email'] ?? '';
 unset($_SESSION['viejo_email']);
 

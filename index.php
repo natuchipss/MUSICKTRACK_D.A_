@@ -46,7 +46,7 @@ $avisos = [
     'playlist_invalida'  => ['error', 'Escribe un nombre de hasta 80 caracteres'],
     'agregada_playlist'  => ['ok', 'Agregada a la playlist'],
 ];
-$aviso = $avisos[$_GET['ok'] ?? ''] ?? null;
+$aviso = $avisos[campo_texto($_GET, 'ok')] ?? null;
 
 require __DIR__ . '/vistas/encabezado.php';
 ?>

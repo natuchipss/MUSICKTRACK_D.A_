@@ -138,6 +138,27 @@ final class AccionesTest extends TestCase
         $this->assertStringStartsWith('<!DOCTYPE html>', (new ClienteHttp())->get('login.php')['cuerpo']);
     }
 
+    #[TestDox('CP-17 Un parámetro enviado como arreglo (?ok[]=x) no provoca un error fatal (agregada con R5)')]
+    public function testEntradasComoArreglo(): void
+    {
+        $visitante  = new ClienteHttp();
+        $respuestas = [
+            'index.php'  => $this->ana->get('index.php?ok[]=x&estado[]=y'),
+            'api/search' => $this->ana->get('api/search.php?q[]=daft'),
+            'login.php'  => $visitante->get('login.php?error[]=1'),
+        ];
+        foreach ($respuestas as $pagina => $r) {
+            $this->assertSame(200, $r['status'], $pagina);
+            $this->assertStringNotContainsString('Fatal error', $r['cuerpo'], $pagina);
+        }
+        $this->assertSame('[]', $respuestas['api/search']['cuerpo']);
+
+        $token = $visitante->tokenDe($visitante->get('login.php')['cuerpo']);
+        $login = $visitante->post('acciones/login.php', ['csrf' => $token, 'email[]' => 'x', 'password' => 'y']);
+        $this->assertSame(302, $login['status']);
+        $this->assertStringContainsString('error=credenciales', $login['location']);
+    }
+
     #[TestDox('CP-12 Seguridad: sin token CSRF responde 403 y la API sin sesión responde 401')]
     public function testSeguridad(): void
     {

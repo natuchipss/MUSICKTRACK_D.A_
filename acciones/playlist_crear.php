@@ -3,7 +3,7 @@
 require_once __DIR__ . '/../includes/auth.php';
 accion_protegida();
 
-$nombre = trim($_POST['nombre'] ?? '');
+$nombre = campo_texto($_POST, 'nombre');
 
 if ($nombre === '' || mb_strlen($nombre) > 80) {
     volver('playlist_invalida');

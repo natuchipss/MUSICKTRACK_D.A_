@@ -5,8 +5,8 @@ require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/spotify.php';
 api_protegida(); // solo usuarios con sesión (protege la cuota de la app de Spotify)
 
-$q    = trim($_GET['q'] ?? '');
-$tipo = ($_GET['tipo'] ?? '') === 'album' ? 'album' : 'track';
+$q    = campo_texto($_GET, 'q');
+$tipo = campo_texto($_GET, 'tipo') === 'album' ? 'album' : 'track';
 
 if (mb_strlen($q) < 2) {
     echo '[]';

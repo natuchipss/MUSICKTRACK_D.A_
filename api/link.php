@@ -6,7 +6,7 @@ require __DIR__ . '/../includes/auth.php';
 require __DIR__ . '/../includes/spotify.php';
 api_protegida();
 
-$link = spotify_parsear_link(trim($_GET['url'] ?? ''));
+$link = spotify_parsear_link(campo_texto($_GET, 'url'));
 
 if (!$link) {
     http_response_code(400);
