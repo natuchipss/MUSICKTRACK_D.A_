@@ -6,13 +6,13 @@ en `main`, y después de cada commit se ejecutaron todas las pruebas
 
 | # | Mejora | Commit | Tipo de mantenimiento |
 |---|---|---|---|
-| [R1](#r1) | Validación de canciones unificada | `0c7e457` | Preventivo |
-| [R2](#r2) | Cliente HTTP único para Spotify y Deezer | `cca311f` | Preventivo / perfectivo |
-| [R3](#r3) | Detección de género con menos complejidad | `e1475a1` | Perfectivo |
-| [R4](#r4) | `consultar_biblioteca()` dividida | `9d060d1` | Perfectivo y correctivo |
-| [R5](#r5) | Validación con aviso de error y entradas seguras | `ddff45c`, `cf7cea2` | Correctivo |
-| [R6](#r6) | Estándar PSR-12 y tipos para PHPStan | `afcd9b3` | Preventivo |
-| [R7](#r7) | Datos personales fuera del script SQL | `6318463` | Correctivo (seguridad) |
+| [R1](#r1) | Validación de canciones unificada | `45cd69a` | Preventivo |
+| [R2](#r2) | Cliente HTTP único para Spotify y Deezer | `39c0baa` | Preventivo / perfectivo |
+| [R3](#r3) | Detección de género con menos complejidad | `3ad7250` | Perfectivo |
+| [R4](#r4) | `consultar_biblioteca()` dividida | `969c896` | Perfectivo y correctivo |
+| [R5](#r5) | Validación con aviso de error y entradas seguras | `263a21d`, `fea11f7` | Correctivo |
+| [R6](#r6) | Estándar PSR-12 y tipos para PHPStan | `ac000f9` | Preventivo |
+| [R7](#r7) | Datos personales fuera del script SQL | `e81a027` | Correctivo (seguridad) |
 
 Para ver un cambio completo: `git show <commit>`.
 
@@ -589,4 +589,4 @@ el nombre son datos personales. Un script de instalación no debe traer cuentas.
 
 **Beneficios.** Una base nueva queda vacía. Las pruebas crean su base con este mismo script y
 confirman que las cuatro tablas siguen creándose bien. **Pendiente:** el dato sigue en el historial de
-Git anterior a `6318463` (ver [MANTENIMIENTO.md](MANTENIMIENTO.md)).
+Git anterior a `e81a027` (ver [MANTENIMIENTO.md](MANTENIMIENTO.md)).

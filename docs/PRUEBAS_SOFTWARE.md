@@ -127,7 +127,7 @@ Spotify en CP-15 durante R2 (ver sección 7). Durante R1, CP-14 encontró que un
 como arreglo producía el aviso *Array to string conversion*, y se corrigió con `campo_texto()` antes
 del commit.
 
-### Después de la refactorización (commit `cf7cea2`)
+### Después de la refactorización (commit `fea11f7`)
 
 ```
 OK (46 tests, 135 assertions)

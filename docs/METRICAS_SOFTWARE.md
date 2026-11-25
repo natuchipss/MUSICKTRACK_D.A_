@@ -4,7 +4,7 @@ Métricas de producto medidas sobre el código PHP propio, con las herramientas 
 descritas en [EVALUACION_SOFTWARE.md](EVALUACION_SOFTWARE.md).
 
 - **Antes:** commit `5f0bb3a`, último antes de la Guía 11.
-- **Después:** commit `cf7cea2`, con las mejoras R1 a R7.
+- **Después:** commit `fea11f7`, con las mejoras R1 a R7.
 
 Ambas mediciones se hicieron con `tools/analizar.ps1` sobre una copia exportada con `git archive`,
 con las mismas versiones y archivos de configuración. Los reportes originales están en
@@ -190,7 +190,7 @@ php tools\polimetrica.php . docs\evidencias\despues\complejidad.txt includes\gen
 
 ![Vista polimétrica antes de la refactorización](img/polimetrica-antes.svg)
 
-### Después (commit `cf7cea2`)
+### Después (commit `fea11f7`)
 
 ![Vista polimétrica después de la refactorización](img/polimetrica-despues.svg)
 

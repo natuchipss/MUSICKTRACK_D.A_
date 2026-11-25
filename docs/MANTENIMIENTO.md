@@ -18,7 +18,7 @@ y Deezer (sugerencia de género).
 
 | # | Deuda | Dónde | Origen | Estimación |
 |---|---|---|---|---:|
-| D1 | Datos personales en el historial de Git (el commit `6318463` los quitó del archivo, pero siguen en los commits anteriores, ya publicados en GitHub) | `database/musictrack_db.sql` antes de `6318463` | R7 | 30 min |
+| D1 | Datos personales en el historial de Git (el commit `e81a027` los quitó del archivo, pero siguen en los commits anteriores, ya publicados en GitHub) | `database/musictrack_db.sql` antes de `e81a027` | R7 | 30 min |
 | D2 | Se eliminó `registro.php` (raíz), pero `vistas/auth.php` sigue enlazando a él ("¿No tienes cuenta? Regístrate") y conserva el modo `registro`: el enlace da 404 y no se pueden crear cuentas desde la interfaz | `vistas/auth.php`, línea 72 | Decisión del equipo | 15 min |
 | D3 | 9 funciones terminan con `exit` (`volver()`, `accion_protegida()`, `api_protegida()`, `requerir_login()`, `db()`, `error_registro()`): obligan a probar las acciones solo por HTTP | `includes/auth.php`, `includes/funciones.php`, `includes/db.php` | PHPMD `ExitExpression` | 135 min |
 | D4 | `accion_protegida(bool $requiereUsuario)`: un parámetro booleano que cambia el comportamiento | `includes/auth.php` | PHPMD `BooleanArgumentFlag` | 20 min |

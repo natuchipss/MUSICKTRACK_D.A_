@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" font-family="Arial, sans-serif" font-size="11" fill="#222">
-  <!-- Vista polimétrica DESPUÉS (commit cf7cea2). Alto = LOC (1 px por línea), ancho = funciones (12 px c/u), color = CC máxima -->
+  <!-- Vista polimétrica DESPUÉS (commit fea11f7). Alto = LOC (1 px por línea), ancho = funciones (12 px c/u), color = CC máxima -->
   <rect width="760" height="300" fill="#ffffff"/>
-  <text x="10" y="20" font-size="14" font-weight="bold">Después (commit cf7cea2)</text>
+  <text x="10" y="20" font-size="14" font-weight="bold">Después (commit fea11f7)</text>
   <text x="10" y="36" fill="#555">Alto: LOC · Ancho: funciones · Color: complejidad ciclomática máxima</text>
 
   <line x1="10" y1="255" x2="750" y2="255" stroke="#999"/>
