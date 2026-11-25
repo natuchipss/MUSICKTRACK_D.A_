@@ -19,7 +19,7 @@ y Deezer (sugerencia de género).
 | # | Deuda | Dónde | Origen | Estimación |
 |---|---|---|---|---:|
 | D1 | Datos personales en el historial de Git (el commit `6318463` los quitó del archivo, pero siguen en los commits anteriores, ya publicados en GitHub) | `database/musictrack_db.sql` antes de `6318463` | R7 | 30 min |
-| D2 | `registro.php` (raíz) usa `$errores[$_GET['error'] ?? '']`: `?error[]=1` provoca un error fatal. También le falta la línea en blanco después de `<?php` (el único error PSR-12 que queda). No se modificó porque en la copia local del proyecto el archivo aparece borrado sin confirmar | `registro.php`, línea 16 | R5 / R6 | 10 min |
+| D2 | Se eliminó `registro.php` (raíz), pero `vistas/auth.php` sigue enlazando a él ("¿No tienes cuenta? Regístrate") y conserva el modo `registro`: el enlace da 404 y no se pueden crear cuentas desde la interfaz | `vistas/auth.php`, línea 72 | Decisión del equipo | 15 min |
 | D3 | 9 funciones terminan con `exit` (`volver()`, `accion_protegida()`, `api_protegida()`, `requerir_login()`, `db()`, `error_registro()`): obligan a probar las acciones solo por HTTP | `includes/auth.php`, `includes/funciones.php`, `includes/db.php` | PHPMD `ExitExpression` | 135 min |
 | D4 | `accion_protegida(bool $requiereUsuario)`: un parámetro booleano que cambia el comportamiento | `includes/auth.php` | PHPMD `BooleanArgumentFlag` | 20 min |
 | D5 | Archivos que mezclan declaraciones con efectos secundarios (`session_start()`, `require_once`), por no tener carga automática | `includes/auth.php`, `genero.php`, `spotify.php`, `acciones/registro.php` | PSR-1 | 60 min |
@@ -48,7 +48,7 @@ y Deezer (sugerencia de género).
 | # | Actividad | Tipo de mantenimiento | Prioridad | Deuda o problema |
 |---|---|---|---|---|
 | M1 | Reescribir el historial para quitar el `INSERT` de usuarios (`git filter-repo`), forzar el *push* y cambiar la contraseña de esa cuenta | Correctivo (seguridad) | **Alta** | D1 |
-| M2 | Recuperar `registro.php`, usar `campo_texto($_GET, 'error')` y agregar el caso a CP-17 | Correctivo | **Alta** | D2 |
+| M2 | Decidir el registro de cuentas: quitar el enlace y el modo `registro` de `vistas/auth.php`, o volver a crear la página con `campo_texto($_GET, 'error')` | Correctivo | **Alta** | D2 |
 | M3 | Limitar los intentos de inicio de sesión (por ejemplo, 5 por cada 15 minutos por correo e IP) | Preventivo (seguridad) | **Alta** | Problema 1 |
 | M4 | Alinear el informe de arquitectura con el código real, o planear la migración | Adaptativo | **Alta** | D8 |
 | M5 | Actualizar el README: quitar las migraciones inexistentes y documentar pruebas y análisis | Correctivo (documentación) | Media | Problema 5 |

@@ -9,7 +9,6 @@
     <file>vistas</file>
     <file>index.php</file>
     <file>login.php</file>
-    <file>registro.php</file>
 
     <!-- Credenciales locales: no es código del proyecto y no está en Git -->
     <exclude-pattern>includes/config.php</exclude-pattern>

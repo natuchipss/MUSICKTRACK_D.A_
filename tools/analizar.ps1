@@ -24,7 +24,7 @@ $repo   = Split-Path $PSScriptRoot -Parent
 $salida = Join-Path $repo "docs\evidencias\$Etapa"
 New-Item -ItemType Directory -Force $salida | Out-Null
 
-$fuentes = @('acciones', 'api', 'includes', 'vistas', 'index.php', 'login.php', 'registro.php')
+$fuentes = @('acciones', 'api', 'includes', 'vistas', 'index.php', 'login.php')
 
 Push-Location $Raiz
 try {

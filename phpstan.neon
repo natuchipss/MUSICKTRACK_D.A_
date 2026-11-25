@@ -8,6 +8,5 @@ parameters:
         - vistas
         - index.php
         - login.php
-        - registro.php
     excludePaths:
         - includes/config.php (?)
